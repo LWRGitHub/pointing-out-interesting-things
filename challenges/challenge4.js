@@ -1,7 +1,5 @@
 /*
  *******************************************************************************
- * INSTRUCTIONS:
- * Follow the steps below and answer the discusssion questions that follow.
  * 
  * 1. Read over the code that follows. `makePromise` is a function that makes
  *    an API call and returns a Promise containing the result. Uncomment code

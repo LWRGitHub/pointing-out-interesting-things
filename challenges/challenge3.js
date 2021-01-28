@@ -1,26 +1,21 @@
 /*
  *******************************************************************************
- * INSTRUCTIONS:
- * Follow the steps below and answer the discusssion questions that follow.
  * 
- * 1. Read over the `greetAndUppercase` function. This function uses
- *    Async/Await. How is this function different than a regular (non-async)
- *    function? What is its return type?
+ * 1. Reading over the `greetAndUppercase` function. 
+ *    I can see the Async/Await function set up in a user friendly familiar way. 
+ *    The return type is a promise.
  * 
  * 
- * 2. Uncomment block #1 and run the code using `node challenge3.js`. What is
- *    printed when we use `greetAndUppercase` like a regular function?
+ * 2. Run block #1 with `node challenge3.js` to see what using 
+ *    `greetAndUppercase` as a normal function would look like, we see It prints 
+ *    a pending promise.
  * 
  * 
- * 3. Uncomment block #2 and run the code again. What happens now?
+ * 3. Runing block #2 we see the code prints out:
+ *    'HELLO THERE, DUCKY'
  * 
  * 
- * 4. Write an asynchronous method 'spacer' that takes a string as input and 
- *    returns the input string with a space added between each character. You 
- *    can use your solution from Part 3.
- * 
- *    Call 'spacer' in the `greetAndUppercase` method and run your code again.
- *    You should see something like:
+ * 4.Using your solution from Part 3 you can see that the 'spacer' method prints:
  * 
  *    'H E L L O   T H E R E ,   D U C K Y'
  * 
@@ -67,15 +62,24 @@ async function greetAndUppercase(name) {
     return uppercasedGreeting
 }
 
-/* Uncomment me! #1 */
-// result = greetAndUppercase('Ducky')
-// console.log(result)
+async function spacer(str) {
+    strSpaced = await str.split('').join(' ')
+    return strSpaced
+}
 
-/* Uncomment me! #2 */
-// greetAndUppercase('Ducky')
-//     .then(function(result) {
-//         console.log(result)
-//     })
-//     .catch(function(err) {
-//         console.log(err)
-//     })
+// Block #1
+result = greetAndUppercase('Ducky')
+console.log(result)
+
+// Block #2
+greetAndUppercase('Ducky')
+    .then(function(result) {
+        console.log(result)
+        return spacer(result);
+    })
+    .then(function(spacerResult) {
+        console.log(spacerResult)
+    })
+    .catch(function(err) {
+        console.log(err)
+    })

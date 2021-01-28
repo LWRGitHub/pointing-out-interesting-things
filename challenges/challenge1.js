@@ -1,19 +1,24 @@
 /*
  *******************************************************************************
- * INSTRUCTIONS:
- * Follow the steps below and answer the discusssion questions that follow.
+ * - delay time in the `snooze` function for first part needs to be 2000 ms
  * 
- * 1. Read over the code that follows. In what order will the outputs "Step 1",
- *    "Step 2", and "Step 3" be printed? How do you know?
- * 
- * 
- * 2. Run this code using `node challenge1.js`. In what order were the steps
- *    printed?
+ * 1. The code with print first "Step 1", then "Step 3" and then "Step 2"
+ *    because of the setTimeout.
  * 
  * 
- * 3. Change the delay time in the `snooze` function from 2000 ms to 0. In what
- *    order will the steps be printed now? Why? Re-run the code again to verify
- *    your expectation. Were you correct?
+ * 2. Run this code using `node challenge1.js` You finde that it prints:
+ *    "Step 1"
+ *    "Step 3"
+ *    "Step 2"
+ * 
+ * 
+ * 3. Changeing the delay time from 2000 ms to 0 makes me think the script 
+ *    would print "Step 1", then "Step 2", and then "Step 3"
+ *    But acually as you can see when you run this code using 
+ *    `node challenge1.js` You finde that it prints:
+ *    "Step 1"
+ *    "Step 3"
+ *    "Step 2"
  * 
  *******************************************************************************
  */
@@ -22,7 +27,7 @@
 function snooze(action) {
     setTimeout(function() {
       action();
-    }, 2000);
+    }, 0);
 }
 console.log('Step 1');
 
